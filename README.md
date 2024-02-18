@@ -25,7 +25,7 @@ The features included are:
 - **Special Characters**: when either shift keys are enabled, special characters are revealed 
 - **Draggable Keyboard**: you can move the keyboard around!
 
---- [LIVE WEBSITE]() ---
+--- [LIVE WEBSITE](https://vjm-virtual-keyboard.netlify.app/) ---
 
 ## Project Screenshots
  
