@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Keyboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Toggles -->
+    <div class="toggles">
+        <!-- Keyboard Toggle -->
+        <button class="kb-toggle kb-toggle-active" aria-label="Toggle virtual keyboard."></button>
+        <!-- Light/Dark Mode Toggle -->
+        <button class="dark-mode-toggle" aria-label="Toggle between light and dark mode."></button>
+        <!-- Color Picker -->
+        <input type="color" name="color-picker" class="color-picker" aria-label="Color picker for choosing the color of the keyboard keys.">
+    </div>
+    
+    <!-- Textarea and Keyboard -->
+    <div class="container">
+        <!-- Textarea -->
+        <textarea name="textarea" class="textarea" spellcheck="false" placeholder="Start Typing Here..."></textarea>
+        <!-- Keyboard -->
+        <div class="keyboard-wrapper draggable">
+            <div class="keyboard-keys">
+                <!-- ROW 1 -->
+                <div class="rows">
+                    <button class="keys">`</button>
+                    <button class="keys">1</button>
+                    <button class="keys">2</button>
+                    <button class="keys">3</button>
+                    <button class="keys">4</button>
+                    <button class="keys">5</button>
+                    <button class="keys">6</button>
+                    <button class="keys">7</button>
+                    <button class="keys">8</button>
+                    <button class="keys">9</button>
+                    <button class="keys">0</button>
+                    <button class="keys">-</button>
+                    <button class="keys">=</button>
+                    <button class="keys backspace-key">Backspace</button>
+                </div>
+                <!-- ROW 2 -->
+                <div class="rows">
+                    <button class="keys tab-key">Tab</button>
+                    <button class="keys">Q</button>
+                    <button class="keys">W</button>
+                    <button class="keys">E</button>
+                    <button class="keys">R</button>
+                    <button class="keys">T</button>
+                    <button class="keys">Y</button>
+                    <button class="keys">U</button>
+                    <button class="keys">I</button>
+                    <button class="keys">O</button>
+                    <button class="keys">P</button>
+                    <button class="keys">[</button>
+                    <button class="keys">]</button>
+                    <button class="keys">\</button>
+                </div>
+                <!-- ROW 3 -->
+                <div class="rows">
+                    <button class="keys capslk-key">CapsLk</button>
+                    <button class="keys">A</button>
+                    <button class="keys">S</button>
+                    <button class="keys">D</button>
+                    <button class="keys">F</button>
+                    <button class="keys">G</button>
+                    <button class="keys">H</button>
+                    <button class="keys">J</button>
+                    <button class="keys">K</button>
+                    <button class="keys">L</button>
+                    <button class="keys">;</button>
+                    <button class="keys">'</button>
+                    <button class="keys enter-key">Enter</button>
+                </div>
+                <!-- ROW 4 -->
+                <div class="rows">
+                    <button class="keys shift-key shift-left">Shift</button>
+                    <button class="keys">Z</button>
+                    <button class="keys">X</button>
+                    <button class="keys">C</button>
+                    <button class="keys">V</button>
+                    <button class="keys">B</button>
+                    <button class="keys">N</button>
+                    <button class="keys">M</button>
+                    <button class="keys">,</button>
+                    <button class="keys">.</button>
+                    <button class="keys">/</button>
+                    <button class="keys shift-key shift-right">Shift</button>
+                </div>
+                <!-- ROW 5 -->
+                <div class="rows">
+                    <button class="keys spacebar-key"><span class="visually-hidden">Spacebar</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="./keyboard.js"></script>
+    <script src="./draggable.js"></script>
+    <script src="./lightdarkmode.js"></script>
+</body>
+
+</html>
