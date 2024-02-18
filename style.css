@@ -1,0 +1,270 @@
+/**** ROOT VARIABLES ****/
+:root {
+    /* LIGHT MODE */
+    --clr-bg: hsl(90, 10%, 96%);
+    --clr-font: hsl(340, 7%, 17%);
+    --clr-keyboard: hsl(0, 0%, 94%);
+    --clr-btn: #bfb9f8;
+    --clr-btn-hover: hsl(0, 0%, 100%);
+    --clr-svg-filter: invert(6%) sepia(5%) saturate(3443%) hue-rotate(289deg) brightness(85%) contrast(75%);
+
+    /* FONT STYLES */
+    --font-size: 1rem;
+    --font-family: 'Sono', monospace;
+    --fw-regular: 400;
+
+    /* TRANSITION */
+    --transition: all 0.3s ease-in-out;
+}
+
+/* DARKMODE */
+.darkmode {
+    --clr-bg: hsl(340, 7%, 8%);
+    --clr-font: hsl(90, 13%, 94%);
+    --clr-keyboard: hsl(340, 7%, 17%);
+    --clr-btn-hover: hsl(336, 8%, 12%);
+    --clr-svg-filter: invert(92%) sepia(2%) saturate(238%) hue-rotate(49deg) brightness(107%) contrast(92%);
+}
+
+
+
+/**** CSS RESET ****/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+  
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+
+/**** GENEREAL ****/
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--fw-regular);
+    color: var(--clr-font);
+    background-color: var(--clr-bg);
+}
+
+button {
+    cursor: pointer;
+    color: var(--clr-font);
+    background-color: var(--clr-btn);
+    border: none;
+}
+
+
+
+/**** TOGGLES ****/
+.toggles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1em;
+    margin: 1em 1em 0 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* KEYBOARD TOGGLE */
+.kb-toggle, .dark-mode-toggle {
+    border: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 50%;
+}
+
+.kb-toggle::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-image: url("./icons/keyboard.svg");
+    filter: var(--clr-svg-filter);
+}
+
+.kb-toggle:active {
+    background-color: var(--clr-);
+}
+
+.kb-toggle-active {
+    background-color: var(--clr-keyboard);
+}
+
+/* LIGHT/DARK MODE TOGGLE */
+.dark-mode-toggle::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-image: url("./icons/circle-half-stroke.svg");
+    filter: var(--clr-svg-filter);
+}
+
+/* COLOR PICKER */
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    padding: 0;
+    width: 3.4em;
+    height: 3.4em;
+    border: none;
+    cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch,
+.color-picker::-moz-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+
+
+/**** CONTAINER ****/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/**** TEXT AREA ****/
+.textarea {
+    outline: var(--clr-bg);
+    background-color: var(--clr-bg);
+    color: var(--clr-font);
+    border: 0px solid var(--clr-bg);
+    word-break: break-all;
+    overflow-y: scroll;
+    resize: none;
+    margin-top: -8em;
+    padding: 1em;
+    width: 45em;
+    height: 25em;
+}
+
+.textarea-big {
+    height: 50em;
+}
+
+
+
+/**** KEYBOARD ****/
+.keyboard-wrapper {
+    position: absolute;
+    top: 65%;
+    padding: 2em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+
+    background-color: var(--clr-keyboard);
+}
+
+.keyboard-keys {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.keyboard-hidden {
+    display: none;
+}
+
+/* DRAG */
+.draggable {
+    position: absolute;
+    user-select: none;
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+/* ROW */
+.rows {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+/* KEYS */
+.keys {
+    font-size: 1.5rem;
+}
+
+.keys:hover {
+    background-color: var(--clr-btn-hover);
+    transition: var(--transition)
+}
+
+.keys:active {
+    background-color: var(--clr-btn);
+    transform: translateY(0.2em);
+    transition: var(--transition)
+}
+
+.round {
+    padding: 0.1em 0.6em;
+    border-radius: 50%;
+}
+
+.rectangle {
+    padding: 0.1em 0.3em;
+    border-radius: 0.5em;
+}
+
+.spacebar-key {
+    width: 20em;
+    height: 1.75em;
+    padding: 0.15em;
+    color: var(--clr-btn);
+}
+
+.spacebar-key:hover {
+    color: var(--clr-btn-hover);
+    transition: var(--transition);
+}
+
+.spacebar-key:active {
+    color: var(--clr-btn);
+    transition: var(--transition);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+/* KEY ACTIVE STATES FOR CAPSLK AND SHIFT KEYS */
+.key-active {
+    background-color: var(--clr-btn-hover);
+}
